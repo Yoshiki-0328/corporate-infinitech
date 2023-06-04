@@ -1,79 +1,295 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/fabicon16x16.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/destyle.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/fabicon16x16.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/destyle.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>インフィニテック-InfiniTech</title>
-</head>
-<body>
-    <!-- ヘッダー -->
-    <header>
-        <h1>
+  </head>
+  <body>
+    <div id="wrapper">
+      <!-- ヘッダー -->
+      <header>
+        <div class="inner">
+          <h1 id="logo">
             <a href="#">
-                <img src="img/logo300x80.png" alt="インフィニテックロゴ">
+              <img src="img/logo300x80.png" alt="インフィニテックロゴ" />
             </a>
-        </h1>
-        <!-- ナビメニュー -->
-        <nav>
-            <ul>
-                <li>
-                    <a href="#">企業情報</a>
-                </li>
-                <li>
-                    <a href="#">製品情報/サービス</a>
-                </li>
-                <li>
-                    <a href="#">導入事例</a>
-                </li>
-                <li>
-                    <a href="#">採用情報</a>
-                </li>
-                <li>
-                    <a href="#">資料請求</a>
-                </li>
-                <li>
-                    <a href="#">お問い合わせ</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+          </h1>
+          <!-- ナビメニュー -->
+          <ul class="nav">
+            <li>
+              <a href="#">当社について</a>
+            </li>
+            <li>
+              <a href="#">サービス</a>
+            </li>
+            <li>
+              <a href="#">導入事例</a>
+            </li>
+            <li>
+              <a href="#">採用情報</a>
+            </li>
+            <li>
+              <a href="#">企業情報</a>
+            </li>
+            <li>
+              <a href="#">資料請求</a>
+            </li>
+            <li>
+              <a href="#">お問い合わせ</a>
+            </li>
+          </ul>
+        </div>
+      </header>
 
-    <!-- メイン -->
-    <main>
+      <!-- メイン -->
+      <main>
         <!-- メイン画像 -->
         <div id="mainvisual">
-
+          <img src="img/top1.jpg" alt="トップ画像1" />
         </div>
+
         <!-- 企業情報 -->
         <section id="infomation">
-            <h3>企業情報</h3>
+          <div class="inner">
+            <h3 class="title">当社について</h3>
+            <p class="thum-title">About us</p>
+            <p>
+              インフィニテックは、未来を創造するテクノロジー企業です。<br />
+              革新的なソリューションとエキスパートなチームを活かし、お客様のビジネスの成功を支えます。<br />
+              我々の情熱は、常に最新のトレンドを追い求め、革新的なアイデアを生み出すことです。<br />
+              お客様のニーズに合わせたカスタムソリューションを提供し、卓越した品質と信頼性を追求します。<br />
+              ビジネスの成功をソリューションとエキスパートなチームを活かし、卓越した品質と信頼性を追求します。<br />
+              未来に挑戦し、可能性を広げるために、インフィニテックと共に進んでください。
+            </p>
+          </div>
         </section>
+
         <!-- 製品情報/サービス -->
         <section id="service">
-            <h3>製品情報/サービス</h3>
+          <div class="inner">
+            <h3 class="title">サービス</h3>
+            <p class="thum-title">Service</p>
+            <ul class="nav">
+              <li>
+                <p>プログラム開発</p>
+                <p>
+                  インフィニテックは、カスタムソフトウェア開発を通じて、
+                  お客様のビジネスニーズに合わせた高品質なプログラムを提供します。
+                  <li>
+                    <p>クラウドコンサルティング</p>
+                    <p>
+                      インフィニテックはクラウド技術に精通し、お客様のビジネスをクラウド上で
+                      最適化するためのコンサルティングサービスを提供します。
+                    </p>
+                  </li>
+                  <li>
+                    <p>セキュリティソリューション</p>
+                    <p>
+                      インフィニテックは最新のセキュリティ技術を駆使し、お客様のデータとシステムを
+                      保護するための包括的なセキュリティソリューションを提供します。
+                    </p>
+                  </li>
+                  <li>
+                    <p>データ分析</p>
+                    <p>
+                      インフィニテックはデータを活用して価値を創出するためのデータ分析サービスを提供し、
+                      お客様の意思決定をサポートします。
+                    </p>
+                  </li>
+                  <li>
+                    <p>AIおよび機械学習</p>
+                    <p>
+                      インフィニテックはAIおよび機械学習の専門知識を持ち、お客様のビジネスにおける
+                      自動化や予測分析の実現を支援します。
+                    </p>
+                  </li>
+                  <li>
+                    <p>ITコンサルティング</p>
+                    <p>
+                      インフィニテックのエキスパートチームは、お客様のITインフラやプロセスの
+                      最適化をサポートし、効率性と競争力を向上させるためのコンサルティングサービスを提供します。
+                    </p>
+                  </li>
+                </p>
+              </li>
+            </ul>
+          </div>
         </section>
+
         <!-- 導入事例 -->
         <section id="casestudy">
-            <h3>製品情報/サービス</h3>
+          <div class="inner">
+            <h3 class="title">導入事例</h3>
+            <p class="thum-title">Case study</p>
+            <ul>
+              <li>
+                <dl>
+                  <dt>お取引先</dt>
+                  <dd>エナジーコアプロジェクト株式会社</dd>
+                  <dt>導入目的</dt>
+                  <dd>再生可能エネルギー発電所の運用最適化と監視</dd>
+                  <dt>導入サービス</dt>
+                  <dd>
+                    インフィニテックは、発電所に設置されるIoTデバイスを提供し、それらのデバイスから
+                    得られるデータを収集・分析するためのデータ分析プラットフォームを提供します。
+                  </dd>
+                  <dt>導入効果</dt>
+                  <dd>
+                    エナジーコアプロジェクト社は、発電所の各種センサーデータをリアルタイムで収集し、
+                    インフィニテックのデータ分析プラットフォームを利用して効率的に解析します。これにより、
+                    発電効率を最適化するための最適な運転パラメーターが特定され、障害や異常状態の早期検知が
+                    可能になります。この導入により、発電所の稼働率が10%向上し、エネルギー効率と運用コストの
+                    最適化が実現されます。
+                  </dd>
+                </dl>
+                <img src="img/case1-manu.jpg" alt="導入事例1" />
+              </li>
+              <li>
+                <dl>
+                  <dt>お取引先</dt>
+                  <dd>グローバルマーケットソリューションズ社</dd>
+                  <dt>導入目的</dt>
+                  <dd>グローバルマーケットでの競争力向上と売上拡大</dd>
+                  <dt>導入サービス</dt>
+                  <dd>
+                    インフィニテックは、グローバルマーケットソリューションズ社のビジネスに対して
+                    データ分析およびAIおよび機械学習ソリューションを提供します。
+                  </dd>
+                  <dt>導入効果</dt>
+                  <dd>
+                    グローバルマーケットソリューションズ社は、インフィニテックのデータ分析ソリューションを
+                    活用して市場トレンドや顧客の購買行動を分析・予測し、それを基にマーケティング戦略を策定します。
+                    さらに、AIおよび機械学習を活用して個々の顧客に対してパーソナライズされたサービスや製品提案を
+                    行います。この導入により、グローバルマーケットソリューションズ社は売上を20%増加させ、競合他社に
+                    対する優位性を獲得します。
+                  </dd>
+                </dl>
+                <img src="img/case1-manu.jpg" alt="導入事例1" />
+              </li>
+              <li>
+                <dl>
+                  <dt>お取引先</dt>
+                  <dd>ヘルステックイノベーション株式会社</dd>
+                  <dt>導入目的</dt>
+                  <dd>ヘルスケアデータの統合と個別最適化</dd>
+                  <dt>導入サービス</dt>
+                  <dd>
+                    インフィニテックは、ヘルステックイノベーション社に対してデータ分析ツールと
+                    クラウドコンサルティングサービスを提供します。
+                  </dd>
+                  <dt>導入効果</dt>
+                  <dd>
+                    ヘルステックイノベーション社は、インフィニテックのデータ分析ツールを活用して、
+                    患者の健康データを統合的に管理します。患者の診断結果、治療履歴、ライフスタイルデータなどの
+                    情報を継続的に収集し、データ分析によって個別の治療プランや予防策を提案します。医療従事者は
+                    リアルタイムで患者の状態を把握し、適切なケアを提供できるようになります。これにより、
+                    患者の健康状態が改善し、予防医療による医療費の削減が実現します。
+                  </dd>
+                </dl>
+                <img src="img/case1-manu.jpg" alt="導入事例1" />
+              </li>
+            </ul>
+          </div>
         </section>
+
         <!-- 採用情報 -->
         <section id="recruit">
-            <h3>製品情報/サービス</h3>
+          <div class="inner">
+            <h3 class="title">採用情報</h3>
+            <p class="thum-title">Recruit</p>
+            <div class="slide">
+              <img src="img/recruit1.jpg" alt="採用画像１" />
+            </div>
+            <div class="content">
+              <dl>
+                <dt>募集要項</dt>
+                <dd>
+                  職種: データサイエンティスト<br />
+                  応募資格:
+                  データ分析の経験、統計学や機械学習の知識、プログラミングスキル（Python、Rなど）<br />
+                  求める能力:
+                  データの収集・処理・分析、予測モデルの開発、ビジネスへの応用能力<br />
+                  採用人数: 2名<br />
+                </dd>
+                <dt>勤務地</dt>
+                <dd>
+                  本社: 都市名<br />
+                  希望やプロジェクトの要件により、一部リモートワークも可能
+                </dd>
+                <dt>給与</dt>
+                <dd>
+                  能力と経験に応じた競争力のある給与パッケージ<br />
+                  年俸制（基本給＋賞与＋インセンティブ）
+                </dd>
+                <dt>勤務時間</dt>
+                <dd>
+                  フレックスタイム制度あり<br />
+                  コアタイム: 10:00〜16:00（勤務時間は個別に調整可能）<br />
+                  週5日勤務（土日祝日は休日）
+                </dd>
+              </dl>
+              <div class="link">
+                <a href="#">外部サイトで詳しく見る</a>
+              </div>
+            </div>
+          </div>
         </section>
+
+        <!-- 企業情報 -->
+        <section id="company">
+          <div class="inner">
+            <h3 class="title">企業情報</h3>
+            <p class="thum-title">Company</p>
+            <div class="content">
+              <dl>
+                <dt>会社名</dt>
+                <dd>インフィニテック株式会社</dd>
+                <dt>設立</dt>
+                <dd>20XX年X月XX日</dd>
+                <dt>事業内容</dt>
+                <dd>
+                  ITソリューションの提供、ソフトウェア開発、データ分析、
+                  クラウドコンサルティング、IoTソリューションの提供など
+                </dd>
+                <dt>資本金</dt>
+                <dd>XXX万円</dd>
+                <dt>代表者</dt>
+                <dd>山田太郎</dd>
+                <dt>連絡先</dt>
+                <dd>
+                  本社所在地: 都市名、市区町村名、番地<br>
+                  電話番号: XXX-XXXX-XXXX<br>
+                  メールアドレス: info@infinitex.com
+                </dd>
+                <dt>主な取引先</dt>
+                <dd>
+                    エナジーコアプロジェクト株式会社<br>
+グローバルマーケットソリューションズ社<br>
+ヘルステックイノベーション株式会社<br>
+グローバルロジスティクステクノロジー株式会社<br>
+ファイナンステックパートナーズ株式会社<br>
+インターネットサービス株式会社
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </section>
+
         <!-- 資料請求 -->
         <section id="document">
-            <h3>製品情報/サービス</h3>
+          <h3>製品情報/サービス</h3>
         </section>
 
         <!-- お問い合わせ -->
         <div id="contact"></div>
-    </main>
+      </main>
 
-    <footer>
-        
-    </footer>
-</body>
+      <footer></footer>
+    </div>
+  </body>
 </html>

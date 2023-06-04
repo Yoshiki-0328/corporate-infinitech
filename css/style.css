@@ -1,0 +1,197 @@
+html {
+    font-family: YakuHanJP, Barlow, "Noto Sans JP", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック, "Yu Gothic", メイリオ, sans-serif;
+}
+body{
+    line-height: 1;
+    font-size: 100%;
+    color: #333;
+    width: 100%;
+}
+.inner{
+    width: 70%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+/* -----------
+header
+----------- */
+header{
+    background-color: white;
+    border-bottom: 1px solid #999;
+}
+header .inner{
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+.nav{
+    display: flex;
+}
+header .nav li {
+    margin-left: 20px;
+    font-size: .9rem;
+    font-weight: bold;
+}
+/* -----------
+main
+----------- */
+/* -----------
+mainvisual
+----------- */
+#mainvisual img{
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+}
+/* -----------
+infomation
+----------- */
+#infomation{
+    color: white;
+    background-color: #143a52;
+}
+.title{
+    font-size: 2.0rem;
+    text-align: center;
+}
+.thum-title{
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 50px;
+        line-height: 2;
+}
+#infomation p{
+    line-height: 2;
+}
+/* -----------
+service
+----------- */
+#service .nav{
+    flex-wrap: wrap;
+    padding: 30px 0;
+}
+#service li{
+    width: 33%;
+    padding: 20px;
+}
+#service li p:first-child{
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+#service li p:last-child{
+    font-size: .9rem;
+}
+/* -----------
+casestudy
+----------- */
+#casestudy{
+    color: white;
+    background-color: #143a52;
+}
+#casestudy li{
+    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+}
+#casestudy li:last-child{
+    margin-bottom: 0;
+}
+#casestudy dl{
+    width: 70%;
+    border: 3px solid ;
+    padding: 50px 30px ;
+    padding-right: 160px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#casestudy dt{
+    width: 25%;
+}
+#casestudy dd{
+    width: 75%;
+    font-size: .9rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+#casestudy dd:last-child{
+    margin-bottom: 0;
+}
+#casestudy img{
+    width: 45%;
+    height: 300px;
+    object-fit: cover;
+    margin-left: -15%;
+    box-shadow: 0px 0px 10px .5px #777;
+}
+#casestudy li:nth-last-of-type(2){
+    flex-direction: row-reverse;
+}
+#casestudy li:nth-last-of-type(2) dl{
+    padding-left: 160px;
+    padding-right: 30px;
+}
+#casestudy li:nth-last-of-type(2) img{
+    margin-right: -15%;
+    z-index: 10;
+}
+/* -----------
+Recruit
+----------- */
+.slide {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+} 
+.slide img{
+    border-radius: 30px;
+}
+#recruit .content,
+#company .content{
+    margin-top: 50px;
+    padding: 0px 100px;
+}
+#recruit dl,
+#company dl{
+    display: flex;
+    flex-wrap: wrap;
+}
+#recruit dt,
+#company dt{
+    width: 30%;
+}
+#recruit dd,
+#company dd{
+    width: 70%;
+    line-height: 2;
+    font-size: .9rem;
+}
+#recruit dt,#recruit dd,
+#company dt,#company dd{
+    border-bottom: 2px solid #143a52;
+    padding: 50px;
+}
+#recruit dt:first-child,#recruit dt:first-child+dd,
+#company dt:first-child,#company dt:first-child+dd{
+    border-top: 2px solid #143a52;
+}
+#recruit .link{
+    text-align: center;
+    padding: 50px 0;
+}
+#recruit a{
+    background-color: #143a52;
+    color: white;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 50px;
+}
+/* -----------
+company
+----------- */
+#company{
+    background-color: #cde3eb;
+}
