@@ -9,7 +9,7 @@ body {
   width: 100%;
 }
 .inner {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   padding: 50px 0;
 }
@@ -18,7 +18,7 @@ body {
   opacity: 0;
 }
 .fadeUp {
-  animation: fadeUpAnime forwards 2s ;
+  animation: fadeUpAnime forwards 2s;
   opacity: 0;
 }
 @keyframes fadeUpAnime {
@@ -40,20 +40,149 @@ header {
   border-bottom: 1px solid #999;
 }
 header .inner {
-  margin: 20px auto;
+  width: 95%;
+  margin: 0px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 0;
+  height: 13vh;
+}
+#logo{
+  z-index: 20;
+}
+#logo a {
+  display: flex;
+  align-items: center;
+}
+#logo img {
+  width: 60px;
+}
+#logo h2 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  padding-left: 10px;
 }
 .nav {
   display: flex;
 }
 header .nav li {
-  margin-left: 20px;
+  margin-left: 10px;
   font-size: 0.9rem;
   font-weight: bold;
+}
+/* 
+ホバー時の動き
+*/
+.nav li a {
+  position: relative;
+  display: block;
+  padding: 10px 10px;
+}
+.nav li a::after {
+  content: "";
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  /*線の形状*/
+  width: 80%;
+  height: 2px;
+  background: #333;
+  opacity: 0.8;
+  /*アニメーションの指定*/
+  transition: all 0.3s;
+  transform: scale(0, 1); /*X方向0、Y方向1*/
+  transform-origin: center top; /*上部中央基点*/
+}
+.nav li a:hover {
+  opacity: 0.8;
+}
+.nav li a:hover::after {
+  transform: scale(1, 1); /*X方向にスケール拡大*/
+}
+/* 
+ハンバーガーメニュー
+*/
+.openbtn{
+	/*ボタン内側の基点となるためrelativeを指定。
+追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
+	position: relative;
+	background: #143a52;
+	cursor: pointer;
+    width: 50px;
+    height:50px;
+	border-radius: 5px;
+  display: none;
+  z-index: 20;
+}
+/*ボタン内側*/
+.openbtn span{
+    display: inline-block;
+    transition: all .4s;/*アニメーションの設定*/
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+	background: #fff;
+  	width: 45%;
+  }
+.openbtn span:nth-of-type(1) {
+	top:15px;	
+}
+.openbtn span:nth-of-type(2) {
+	top:23px;
+}
+.openbtn span:nth-of-type(3) {
+	top:31px;
+}
+/*activeクラスが付与されると線が回転して×に*/
+.openbtn.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+.openbtn.active span:nth-of-type(2) {
+opacity: 0;/*真ん中の線は透過*/
+}
+.openbtn.active span:nth-of-type(3){
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+.modal{
+  width: 100%;
+  height: 100vh;
+  background-color: #e3eff3;
+  opacity: .97;
+  z-index: 15;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(100%);
+  transition: all .4s;
+}
+.openbtn.active + .modal{
+  transform: translateX(0%);
+}
+.modal ul {
+  color: #333;
+  font-weight: bold;
+  position: absolute;
+  top: 40%;
+  left: 31%;
+  transform: translateX(-50%);
+  transform: translateY(-40%);
+}
+.modal ul li{
+  font-size: 1.0rem;
+  padding: 20px;
+}
+.modal ul a{
+  text-shadow: 0px 0px 1px #777;
 }
 /* -----------
 main
@@ -63,7 +192,7 @@ mainvisual
 ----------- */
 #mainvisual img {
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   object-fit: cover;
 }
 .slider-item01,
@@ -71,11 +200,10 @@ mainvisual
 .slider-item03 {
   position: relative;
 }
-
 .slider-item01 p,
 .slider-item02 p,
 .slider-item03 p {
-  width: 80%;
+  width: 100%;
   font-size: 2.5rem;
   line-height: 1.5;
   font-weight: bold;
@@ -85,12 +213,11 @@ mainvisual
   left: 50%;
   text-align: center;
   transform: translate(-47%, -50%);
-  text-shadow: 1px 2px 10px #000000;
+  text-shadow: 3px 3px 4px #333;
 }
 #mainvisual span {
   color: #ff7b00;
   font-size: 3.5rem;
-  text-shadow: 1px 2px 10px #692a00;
 }
 /* -----------
 infomation
@@ -121,15 +248,27 @@ service
 }
 #service li {
   width: 33%;
-  padding: 20px;
+  padding: 20px 5px;
 }
-#service li p:first-child {
-  font-size: 1.1rem;
+.icon {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#service img {
+  width: 50px;
+}
+#service li .description {
+  padding: 10px 10px 40px 10px;
+}
+#service li .description p:first-child {
+  font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  text-align: center;
 }
-#service li p:last-child {
+#service li .description p:last-child {
   font-size: 0.9rem;
+  line-height: 1.5;
 }
 /* -----------
 casestudy
@@ -139,7 +278,7 @@ casestudy
   background-color: #143a52;
 }
 #casestudy li {
-  margin-bottom: 100px;
+  margin: 100px 0px;
   display: flex;
   align-items: center;
 }
@@ -150,17 +289,18 @@ casestudy
   width: 70%;
   border: 3px solid;
   padding: 50px 30px;
-  padding-right: 160px;
+  padding-right: 20%;
   display: flex;
   flex-wrap: wrap;
+  line-height: 1.7;
 }
 #casestudy dt {
   width: 25%;
+  margin-bottom: 20px;
 }
 #casestudy dd {
   width: 75%;
   font-size: 0.9rem;
-  line-height: 1.2;
   margin-bottom: 20px;
 }
 #casestudy dd:last-child {
@@ -168,16 +308,16 @@ casestudy
 }
 #casestudy img {
   width: 45%;
-  height: 300px;
+  height: 100%;
   object-fit: cover;
   margin-left: -15%;
-  box-shadow: 0px 0px 10px 0.5px #777;
+  box-shadow: 0px 0px 1px 0.5px #777;
 }
 #casestudy li:nth-last-of-type(2) {
   flex-direction: row-reverse;
 }
 #casestudy li:nth-last-of-type(2) dl {
-  padding-left: 160px;
+  padding-left: 20%;
   padding-right: 30px;
 }
 #casestudy li:nth-last-of-type(2) img {
@@ -198,7 +338,7 @@ Recruit
   padding-top: 0;
 }
 /*
-右から左へ
+スライドショー
 ----------------------------*/
 @keyframes infinity-scroll-left {
   from {
@@ -229,7 +369,7 @@ _:-ms-lang(x)::-ms-backdrop,
   animation: infinity-scroll-left 35s infinite linear 0.5s both;
 }
 .d-demo__item {
-  width: calc(100vw / 4);
+  width: calc(100vw / 3);
   margin: 0px 10px;
 }
 .d-demo__item > img {
@@ -249,6 +389,7 @@ _:-ms-lang(x)::-ms-backdrop,
 #company dl {
   display: flex;
   flex-wrap: wrap;
+  line-height: 2;
 }
 #recruit dt,
 #company dt {
@@ -257,7 +398,6 @@ _:-ms-lang(x)::-ms-backdrop,
 #recruit dd,
 #company dd {
   width: 70%;
-  line-height: 2;
   font-size: 0.9rem;
 }
 #recruit dt,
@@ -333,7 +473,6 @@ contact
 }
 iframe {
   width: 100%;
-  filter: grayscale(70%);
 }
 /* -----------
 footer
@@ -347,4 +486,457 @@ footer .nav {
   justify-content: space-evenly;
   margin-bottom: 30px;
   font-size: 0.8rem;
+}
+footer .nav li a::after {
+  background: white;
+}
+/* 
+スクロールボタン
+*/
+#page-top {
+  background-color: #cde3eb;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(100px);
+}
+#page-top a {
+  width: 17px;
+  height: 17px;
+  border-right: 5px solid #143a52;
+  border-top: 5px solid #143a52;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%) rotate(-45deg);
+}
+/*上に上がる動き*/
+#page-top.UpMove {
+  animation: fadeUpAnime 0.5s forwards;
+}
+/*下に下がる動き*/
+#page-top.DownMove {
+  animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(100px);
+  }
+}
+
+/* --------------------------
+レシポンシブ対応--------------
+---------------------------- */
+/* タブレット------------------ */
+@media screen and (max-width: 876px) {
+  /* -----------
+header
+----------- */
+  .inner {
+    width: 90%;
+  }
+  header .inner {
+    margin: 0px auto;
+  }
+  #logo img {
+    width: 40px;
+  }
+  #logo h2 {
+    font-size: 1.5rem;
+  }
+  header .nav li {
+    margin-left: 0px;
+    font-size: 0.75rem;
+  }
+  header .nav li a{
+    padding: 10px 5px;
+  }
+  /* -----------
+main
+----------- */
+  /* -----------
+mainvisual
+----------- */
+  .slider-item01 p,
+  .slider-item02 p,
+  .slider-item03 p {
+    font-size: 2rem;
+  }
+  #mainvisual span {
+    font-size: 3rem;
+  }
+  /* -----------
+infomation
+----------- */
+  #infomation p {
+    font-size: 0.9rem;
+  }
+  /* -----------
+service
+----------- */
+  #service li {
+    width: 50%;
+    padding: 20px 5px;
+  }
+  /* -----------
+casestudy
+----------- */
+  #casestudy li {
+    margin: 100px 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+  #casestudy li:last-child {
+    margin-bottom: 0;
+  }
+  #casestudy dl {
+    width: 90%;
+    border: 1px solid;
+    padding: 30px;
+    padding-right: 30px;
+  }
+  #casestudy img {
+    width: 90%;
+    height: 300px;
+    margin-left: 0%;
+    margin-bottom: 10px;
+  }
+  #casestudy li:nth-last-of-type(2) {
+    flex-direction: column-reverse;
+  }
+  #casestudy li:nth-last-of-type(2) dl {
+    padding-left: 30px;
+  }
+  #casestudy li:nth-last-of-type(2) img {
+    margin-right: 0%;
+    z-index: 10;
+  }
+  /* -----------
+Recruit
+----------- */
+  .d-demo__item {
+    width: calc(100vw / 2);
+    margin: 0px 5px;
+  }
+  /* コンテンツ設定 */
+  #recruit .content,
+  #company .content {
+    padding: 0px 0px;
+  }
+}
+
+/* スマホ--------------------- */
+@media screen and (max-width: 600px) {
+ /* -----------
+header
+----------- */
+.inner {
+  width: 90%;
+}
+header .inner {
+  margin: 0px auto;
+}
+#logo img {
+  width: 40px;
+}
+#logo h2 {
+  font-size: 1.5rem;
+}
+header .nav li {
+  margin-left: 0px;
+  font-size: 0.8rem;
+}
+header .nav{
+  display: none;
+}
+.openbtn{
+  display: block;
+}
+/* -----------
+main
+----------- */
+/* -----------
+mainvisual
+----------- */
+.slider-item01 p,
+.slider-item02 p,
+.slider-item03 p {
+  font-size: 1.25rem;
+}
+#mainvisual span {
+  font-size: 2.25rem;
+}
+/* -----------
+infomation
+----------- */
+#infomation p:last-child {
+  font-size: 0.8rem;
+}
+.title {
+  font-size: 1.75rem;
+  text-align: center;
+}
+.thum-title {
+  font-size: 1.15rem;
+  text-align: center;
+  margin-bottom: 50px;
+  line-height: 2;
+}
+/* -----------
+service
+----------- */
+#service li {
+  width: 100%;
+  padding: 20px 5px;
+}
+#service li .description p:last-child {
+  font-size: 0.8rem;
+}
+/* -----------
+casestudy
+----------- */
+#casestudy li {
+  margin: 50px 0px;
+}
+#casestudy dl {
+  width: 100%;
+  border: 1px solid;
+  padding: 20px 10px;
+  flex-direction: column;
+  text-align: center;
+}
+#casestudy dt {
+  width: 100%;
+  margin-bottom: 7px;
+}
+#casestudy dd {
+  width: 100%;
+  font-size: 0.8rem;
+  margin-bottom: 30px;
+}
+#casestudy img {
+  width: 100%;
+  height: 200px;
+}
+#casestudy li:nth-last-of-type(2) {
+  flex-direction: column-reverse;
+}
+#casestudy li:nth-last-of-type(2) dl {
+  padding: 20px 10px;
+}
+
+/* -----------
+Recruit
+----------- */
+.d-demo__item {
+  width: calc(100vw / 1.3);
+  margin: 0px 5px;
+}
+.d-demo__item > img {
+  height: 200px;
+}
+
+/* コンテンツ設定 */
+#recruit .content,
+#company .content {
+  padding: 0px 0px;
+}
+#recruit dt,
+#company dt {
+  width: 26%;
+}
+#recruit dd,
+#company dd {
+  width: 74%;
+  font-size: 0.8rem;
+}
+#recruit dt,
+#recruit dd,
+#company dt,
+#company dd {
+  border-bottom: 1px solid #143a52;
+  padding: 40px 2px;
+}
+#recruit dt:first-child,
+#recruit dt:first-child + dd,
+#company dt:first-child,
+#company dt:first-child + dd {
+  border-top: 1px solid #143a52;
+}
+/* -----------
+company
+----------- */
+
+/* -----------
+contact
+----------- */
+#contact .content {
+  flex-direction: column-reverse;
+}
+#desc {
+  width: 100%;
+}
+#map {
+  width: 100%;
+  margin-bottom: 10px;
+}
+/* -----------
+footer
+----------- */
+footer {
+  background-color: #143a52;
+  color: white;
+  text-align: center;
+}
+footer .nav {
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+  font-size: 0.8rem;
+  flex-wrap: wrap;
+}
+footer .nav li{
+  width: 33%;
+}
+footer .nav li a::after {
+  background: white;
+}
+}
+
+
+/* PC（大）--------------------- */
+@media screen and (min-width: 1280px) {
+  #logo img {
+    width: 80px;
+  }
+  #logo h2 {
+    font-size: 2.5rem;
+  }
+  header .nav li {
+    font-size: 1.2rem;
+  }
+  .slider-item01 p,
+.slider-item02 p,
+.slider-item03 p {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+#mainvisual span {
+  font-size: 4rem;
+}
+/* -----------
+infomation
+----------- */
+.title {
+  font-size: 2.5rem;
+}
+.thum-title {
+  font-size: 1.5rem;
+}
+#infomation p {
+  font-size:  1.2rem;
+}
+/* -----------
+service
+----------- */
+#service img {
+  width: 70px;
+}
+#service li .description p:first-child {
+  font-size: 1.5rem;
+}
+#service li .description p:last-child {
+  font-size: 1.2rem;
+}
+/* -----------
+casestudy
+----------- */
+#casestudy dl {
+  width: 70%;
+  border: 5px solid;
+}
+#casestudy dt {
+  font-size: 1.3rem;
+}
+#casestudy dd {
+  font-size: 1.1rem;
+}
+/* -----------
+Recruit
+----------- */
+.d-demo__item > img {
+  height: 450px;
+}
+/* コンテンツ設定 */
+#recruit dt,
+#company dt {
+font-size: 1.5rem;  
+}
+#recruit dd,
+#company dd {
+  width: 70%;
+  font-size: 1.2rem;
+}
+#recruit dt,
+#recruit dd,
+#company dt,
+#company dd {
+  border-bottom: 3px solid #143a52;
+}
+#recruit dt:first-child,
+#recruit dt:first-child + dd,
+#company dt:first-child,
+#company dt:first-child + dd {
+  border-top: 3px solid #143a52;
+}
+#recruit .link {
+  text-align: center;
+  padding: 70px 0;
+}
+#recruit a {
+  font-size: 1.5rem;  
+  padding: 30px;
+}
+/* -----------
+contact
+----------- */
+#desc {
+  padding: 20px;
+}
+#contact #title {
+  font-size: 3rem;
+  margin-bottom: 25px;
+}
+#thum-title {
+  margin-bottom: 60px;
+  font-size: 1.2rem;
+}
+#tel-contact {
+  font-size: 1.2rem;
+}
+#tel-num {
+  font-size: 2.5rem;
+}
+#contact a {
+  font-size: 1.5rem;
+}
+/* -----------
+footer
+----------- */
+footer .nav {
+  font-size: 1.2rem;
+}
+small{
+  font-size: 1.2rem;
+}
 }
