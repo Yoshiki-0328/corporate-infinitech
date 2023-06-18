@@ -153,6 +153,10 @@ opacity: 0;/*真ん中の線は透過*/
   transform: translateY(-6px) rotate(45deg);
   width: 30%;
 }
+body.active {
+    height: 100%;
+    overflow: hidden;
+  }
 .modal{
   width: 100%;
   height: 100vh;
@@ -429,6 +433,71 @@ company
 ----------- */
 
 /* -----------
+faq
+----------- */
+/*アコーディオン全体*/
+.accordion-area{
+  list-style: none;
+  width: 70%;
+  max-width: 900px;
+  margin:0 auto;
+}
+
+.accordion-area li{
+  margin: 10px 0;
+}
+
+.accordion-area section {
+border: 1px solid #ccc;
+}
+
+/*アコーディオンタイトル*/
+.ac-title {
+  position: relative;/*+マークの位置基準とするためrelative指定*/
+  cursor: pointer;
+  font-size:1rem;
+  font-weight: normal;
+  padding: 3% 3% 3% 50px;
+  transition: all .1s ease;
+}
+
+/*アイコンの＋と×*/
+.ac-title::before,
+.ac-title::after{
+  position: absolute;
+  content:'';
+  width: 15px;
+  height: 2px;
+  background-color: #333;
+  
+}
+.ac-title::before{
+  top:48%;
+  left: 15px;
+  transform: rotate(0deg);
+  
+}
+.ac-title::after{    
+  top:48%;
+  left: 15px;
+  transform: rotate(90deg);
+
+}
+/*　closeというクラスがついたら形状変化　*/
+.ac-title.close::before{
+transform: rotate(45deg);
+}
+.ac-title.close::after{
+transform: rotate(-45deg);
+}
+/*アコーディオンで現れるエリア*/
+.box {
+  display: none;/*はじめは非表示*/
+  background: #f3f3f3;
+margin:0 3% 3% 3%;
+  padding: 3%;
+}
+/* -----------
 contact
 ----------- */
 #contact {
@@ -634,8 +703,14 @@ Recruit
   #company .content {
     padding: 0px 0px;
   }
+  /* -----------
+faq
+----------- */
+/*アコーディオン全体*/
+.accordion-area{
+  width: 90%;
 }
-
+}
 /* スマホ--------------------- */
 @media screen and (max-width: 600px) {
  /* -----------
@@ -777,7 +852,15 @@ Recruit
 /* -----------
 company
 ----------- */
-
+/* -----------
+faq
+----------- */
+.ac-title {
+  font-size:.8rem;
+}
+.box {
+  font-size: .8rem;
+}
 /* -----------
 contact
 ----------- */
@@ -812,8 +895,6 @@ footer .nav li a::after {
   background: white;
 }
 }
-
-
 /* PC（大）--------------------- */
 @media screen and (min-width: 1280px) {
   #logo img {
@@ -906,6 +987,15 @@ font-size: 1.5rem;
 #recruit a {
   font-size: 1.5rem;  
   padding: 30px;
+}
+/* -----------
+faq
+----------- */
+.ac-title {
+  font-size:1.2rem;
+}
+.box {
+  font-size: 1.2rem;
 }
 /* -----------
 contact
